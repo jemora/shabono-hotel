@@ -1,0 +1,840 @@
+===Base de datos hotel
+
+== Estructura de tabla para la tabla acompanantes
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|nombre|varchar(100)|Sí|0
+|cedula|varchar(100)|No|
+|telefono|varchar(100)|No|
+|correo|varchar(100)|No|
+|usuario|varchar(100)|No|
+|multi|varchar(100)|No|
+== Volcado de datos para la tabla acompanantes
+
+|1|pedro|138120695|0416441778|corree@asa.com| |2
+|2|maria zalazar|177907882|04164441778|correo@correo.com| |3
+== Estructura de tabla para la tabla banner
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|anchura|smallint(6)|No|0
+|altura|smallint(6)|No|0
+|tipo|varchar(15)|No|
+|ref|varchar(100)|No|
+|imagen|blob|No|
+== Volcado de datos para la tabla banner
+
+== Estructura de tabla para la tabla botones
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|nombre|varchar(100)|No|
+|apellido|varchar(100)|No|
+|cedula|varchar(100)|No|
+|telefono|varchar(100)|No|
+|correo|varchar(100)|No|
+|direccion|varchar(100)|No|
+== Volcado de datos para la tabla botones
+
+|1|Alberto Josue|Mora|20000000|04164441778|alberto@gmail.com|Los Curos                                                                                           
+|2|Pepito |Monserrate|10081|04123334444|pepito@monserrate.com|Cueva la humedad, calle sin rumbo
+|4|Jaime|mora|4520018|0412-0461205|jaimemora2010@hotmail.com|Santa Juana
+|12|Alfonso|Mora B.|20200569|908989|alf_m91@hotmail.com|santa juana
+== Estructura de tabla para la tabla caja
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|fecha|date|No|0000-00-00
+|monto1|varchar(20)|No|
+|monto2|text|No|
+|ref|varchar(100)|No|
+|usuario|text|Sí|NULL
+|recep|text|No|
+|boton|text|No|
+|opc|char(2)|No|0
+|tipo|varchar(150)|No|
+|dia|varchar(50)|Sí|0
+|mes|varchar(50)|Sí|0
+|mes2|varchar(50)|No|0
+|ano|varchar(50)|No|0
+|fecha1|varchar(50)|Sí|NULL
+== Volcado de datos para la tabla caja
+
+|1|2008-06-16|2100|3441.79|1|operador|Julio Laya|Darwin Camico|1|Caja General|1|Junio|1|2008|2008-06-16
+|2|2008-06-16|300|38|0|operador|visita visita|Darwin Camico|1|Caja Turno 1|1|Junio|1|2008|2008-06-16
+|3|2008-06-16|2000|1348.42|1|visita|visita visita|Darwin Camico|1|Caja General|1|Junio|1|2008|2008-06-17
+|4|2008-06-16|400|50|0|visita|visita visita|Darwin Camico|1|Caja Turno 1|1|Junio|1|2008|2008-06-17
+|5|2008-06-16|2000|0|1|operador|visita visita|Darwin Camico|0|Caja General|0|0|0|0|NULL
+== Estructura de tabla para la tabla caja_creada
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|caja|text|No|
+|descripcion|varchar(200)|No|
+|usuario|text|Sí|NULL
+|estado|varchar(50)|No|Inactivo
+|opc|char(2)|No|0
+|ref|char(2)|No|0
+== Volcado de datos para la tabla caja_creada
+
+|1|Caja General|caja de gastos generales  2005|juan2|Activo|1|1
+|9|Caja Turno 1|Turno 7am a 3pm|operador|Activo|1|0
+|10|Caja Turno 2|Turno 3pm a 11pm|operador|Activo|1|0
+|11|Caja Turno 3|Turno 11pm a 7am|operador|Activo|1|0
+== Estructura de tabla para la tabla caja_gastos
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|tipo|text|No|
+|descripcion|varchar(200)|No|
+|monto|text|Sí|NULL
+|fecha|date|Sí|NULL
+|ref|varchar(100)|No|
+|usuario|text|Sí|NULL
+|opc|char(2)|No|0
+== Volcado de datos para la tabla caja_gastos
+
+|1|Caja Turno 1|gastos de refrigerio|36|2008-06-16|2|operador|1
+|2|Caja Turno 1|compra de periodico|2|2008-06-16|2|operador|1
+|3|Caja Turno 1|compras|50|2008-06-16|4|operador|1
+== Estructura de tabla para la tabla cierre_caja_dia
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|fecha|date|No|0000-00-00
+|fecha1|date|No|0000-00-00
+|monto|varchar(20)|No|
+|observacion|varchar(100)|No|
+|usuario|text|Sí|NULL
+|dia|varchar(2)|Sí|0
+== Volcado de datos para la tabla cierre_caja_dia
+
+|1|2008-06-16|2008-06-16| |cierre numero 1|visita|0
+|2|2008-06-16|2008-06-17| |cierres|operador|0
+== Estructura de tabla para la tabla cierre_caja_mes
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|fecha|date|No|0000-00-00
+|mes|varchar(50)|No|
+|ano|varchar(50)|No|
+|observacion|varchar(100)|No|
+|usuario|text|Sí|NULL
+== Volcado de datos para la tabla cierre_caja_mes
+
+|1|2008-06-17|Junio|2008|cierre junio|operador
+== Estructura de tabla para la tabla clientes
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**ID**//|smallint(6)|No|
+|nombre|text|Sí|NULL
+|apellido|text|Sí|NULL
+|nac|text|Sí|NULL
+|doc|text|Sí|NULL
+|doc2|text|Sí|NULL
+|pais|text|Sí|NULL
+|ciudad|text|Sí|NULL
+|direccion|text|Sí|NULL
+|telefono|text|Sí|NULL
+|correo|text|Sí|NULL
+|cliente|text|Sí|NULL
+|vehiculo|text|Sí|NULL
+|fecha|text|Sí|NULL
+|usuario|varchar(200)|No|
+== Volcado de datos para la tabla clientes
+
+|1|juan carlos 2005|franco|V|C.I|13812069|venezuela|villa de cura|el rincon  nuemro 12 2005|04114444178|villaurbe@gmail.com|0|wwea45-OP|23-03-2008|juan2
+|2|victor manuel |escalona|V|C.I|17790733|venezuela|turmero 2005|villa de  cura 2005 2006 2007|041444471778|full_asda@asdas.com|Normal|wwea45-OP|10-03-2008|juan2
+|3|Alfonso|Mora|V|C.I|13131313|Venezuela|Merida|SANTA JUANA|0426-2260026|alf_m91@hotmail.com|Normal|-|10-03-2008|juan2
+|7|pedro|lopez|V|C.I|13812066|vasdasd|asdas|asasd|04114444178|villaurbe@gmail.com|Normal|wwea45-OP|24-03-2008|operador
+|26|asdasdasd|asdasdasd|V|C.I|138120699999|Venezuela|asdasd|asdasd|asdasd| |Normal|asasddsa|09-06-2008|asdasdasda
+|27|ujyujyu|yuiyuyi|V|C.I|uiuiouiouoi|Venezuela|uiuo|uoiuo|uiouoi| |Normal|uiouio|09-06-2008|kikiki
+|14|yessica|marquez|V|C.I|17676449|venezuela|puerto ayacucho| sector san jose|04144886831|essi_446@hotmail.com|V.I.P|np|05-04-2008|operador
+|15|MARY|MARCANO|V|C.I|6087584|venezuela|caracas|AV.URDANETA EDIF. CENTRO FINACIERO LATINO PISO. 6 OFIC. 4          | 0414-3376386| |Normal| |09-04-2008|frank
+|16|NORA A|ALVARADO|V|C.I|6362218|venezuela|caracas|ENTRE CALLE ELICE Y LA JOYA EDIF. DIR. EJECUTIVA DE LA MAJISTRATURA|02122743299| |Normal| |09-04-2008|operador
+|17|MARIA|RODRIGUEZ|V|C.I|6660746|venezuela|caracas|AV. FRANCISCO DE MIRANDA CHACAO|02122743299| |Normal| |09-04-2008|operador
+|18|CARLOS|GARCIA|V|C.I|8858393|venezuela| | | 04269466523| |Normal| |11-04-2008|admin
+|19|ARKAN AKEL R.| |V|C.I|22577441|venezuela|BARINAS|CALLE CAMEJO SECTOR MERCADO|04145718381| |Normal| |11-04-2008|admin
+|20|CARLOS|ZAMBRANO|V|C.I|9369795|venezuela|Pijiguao|Campamento Bauxilum.|0416-6057694| |Normal|np|11-04-2008|operador
+|21|ALBERTO|GARCIA B.|V|C.I|21759331|venezuela|Tucacas|Tucacas Edo. Carabobo|0416-7498539| |Normal|np|11-04-2008|operador
+|24|pedro|pedro|V|C.I|13812068|Venezuela|Villa de  Cura|asdasd|02443864589|villaurbe@gamil.com|Normal|dasdas|08-06-2008|pedro
+|41|kkkkkkkkkkkkkkk|kkkkkkkkkkkkkk|V|C.I|kkkkkkkkk|Argentina|kkkk|kkk|kkkkkkkkkkkkkk|kkkkkkkkkkkkk|Normal|kkkkkkkkk|09-06-2008|kkkkkkkkkk
+|42|manuel|lopez|V|C.I|177907552|Venezuela|dasdasdasd|asdasd|asdasda|asdasd|Normal|asdasdasd|09-06-2008|manuel
+|47|Alfonso|Mora|V|C.I|20200569|Venezuela|Merida|Santa Juana|0426-2260026|alf_m91@hotmail.com|Normal|-|25-08-2013|admin
+|44|Reismar|Casanova|V|C.I|20018090|Venezuela|Pto. Ayacucho|Sector 57|0416-1411110|la_baby_sistet_2@hotmail.com|V.I.P|-|25-08-2013|admin
+|45|Jaime|Mora|V|C.I|10081092|Venezuela|Pto. Ayacucho|sector 57, 3ra calle|0412-0461205|jemora70@hotmail.com|V.I.P|-|25-08-2013|admin
+== Estructura de tabla para la tabla comentarios
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|titulo|varchar(50)|No|
+|mensaje|varchar(100)|No|
+|usuario|varchar(50)|No|
+|fecha|varchar(100)|No|
+== Volcado de datos para la tabla comentarios
+
+== Estructura de tabla para la tabla consumo
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|ref|varchar(20)|No|
+|fecha|text|No|
+|cliente|text|Sí|NULL
+|consumo|text|Sí|NULL
+|canti|text|Sí|NULL
+|precio|text|Sí|NULL
+|subt|varchar(50)|No|
+|opc|char(2)|No|0
+|multi|varchar(100)|No|
+== Volcado de datos para la tabla consumo
+
+|1|10|16-06-2008|13812069|comida Vegetariana|1|30|30|1|2
+|2|10|16-06-2008|13812069|Jugo de naranja|2|10|20|1|2
+|3|10|16-06-2008|13812069|jugos|1|5|5|1|2
+== Estructura de tabla para la tabla contador1
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|fecha|text|No|
+== Volcado de datos para la tabla contador1
+
+|1|2008-06-10
+|13|2008-06-16
+|12|2008-06-16
+|11|2008-06-16
+|10|2008-06-16
+|9|2008-06-16
+|8|2008-06-16
+== Estructura de tabla para la tabla empresas
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**ID**//|smallint(6)|No|
+|empresa|text|Sí|NULL
+|rif|text|Sí|NULL
+|nac|text|Sí|NULL
+|pais|text|Sí|NULL
+|ciudad|text|Sí|NULL
+|direccion|text|Sí|NULL
+|telefono|text|Sí|NULL
+|correo|text|Sí|NULL
+|fecha|text|Sí|NULL
+|usuario|varchar(200)|No|
+== Volcado de datos para la tabla empresas
+
+|4|alpina Productos alimenticios|1254578774|E|Venezuela|caracas|werwrewrwr                                       |04114444178|villaurbe@gmail.com|24-03-2008|operador
+|3|Pepsi cola venezuela2005|v-1842055225|V|Venezuela|maracay|calle  principal  via  sector los naranjos numero 105          |04114444178|polar@dada.com|24-03-2008|operador
+|6|JRM consultores|100|Jaime Mora|Venezuela|Pto. Ayacucho|Sector 57|0426-2260026|alf_m91@hotmail.com|25-08-2013|admin
+== Estructura de tabla para la tabla facturas
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|doc2|varchar(20)|No|
+|codigo|text|No|
+|total|text|Sí|NULL
+|fecha3|date|No|0000-00-00
+|numero|varchar(200)|No|
+|efectivo|varchar(200)|No|
+|cheque|varchar(200)|No|
+|credito|varchar(200)|No|
+|debito|varchar(200)|No|
+|usuario|varchar(200)|No|
+|caja|varchar(255)|No|
+|nota2|varchar(200)|No|
+|reten_isrl|varchar(200)|No|
+|reten_iva|varchar(200)|No|
+|empresa|text|No|
+|multi|varchar(100)|No|
+|dato1|varchar(150)|No|
+|dato2|varchar(150)|No|
+|opc|char(2)|No|0
+== Volcado de datos para la tabla facturas
+
+|1|13812069|13812069|311.88|2008-06-16|1|311.88|0|0|0|operador|1| |0|0| |2|juan carlos 2005|franco|1
+|2|13812069|13812069|616.92|2008-06-16|2|516.92|100|0|0|visita|1| |0|0| |3|juan carlos 2005|franco|1
+|3|13812069|13812069|816.46|2008-06-16|3|0|0|0|816.46|visita|1| |0|0| |144|juan carlos 2005|franco|1
+|4|13812069|13812069|308.46|2008-06-16|4| |0|0|308.46|visita|1| |0|0| |9|juan carlos 2005|franco|1
+|5|13131313|13131313|462.69|2008-06-16|5|0|0|462.69|0|visita|1| |0|0| |18|Manuel Fernandez|lopes perez|1
+|6|13812069|13812069|462.69|2008-06-16|6|0|462.69|0|0|visita|1| |0|0| |36|juan carlos 2005|franco|1
+|7|13812069|13812069|462.69|2008-06-16|7|462.69|0|0|0|visita|1| |0|0| |72|juan carlos 2005|franco|1
+|8|13812069|13812069|308.46|2008-06-16|8|308.46|0|0|0|operador|3| |0|0| |432|juan carlos 2005|franco|1
+|9|17790733|17790733|462.69|2008-06-16|9|0|462|0|0|operador|3| |0|0| |2592|victor manuel |escalona|1
+|10|13812069|13812069|577.96|2008-06-16|10|577.96|0|0|0|operador|3| |0|0| |4752|juan carlos 2005|franco|1
+== Estructura de tabla para la tabla facturas_configurar
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|ancho|varchar(20)|No|
+|alto|varchar(20)|No|
+|ref|char(2)|No|
+|cliente|char(2)|No|
+|direccion|char(2)|No|
+|razon|char(2)|No|
+|telefono|char(2)|No|
+|pais|char(2)|No|
+|ciudad|char(2)|No|
+|nombre|char(2)|No|
+|nombre2|char(2)|No|
+|rif|char(2)|No|
+|correo|char(2)|No|
+|telefono2|char(2)|No|
+|direccion2|char(2)|No|
+|hotel|char(2)|No|
+|linea|char(2)|No|
+|valor_neto|char(2)|No|
+|iva|char(2)|No|
+|total|char(2)|No|
+|observaciones|char(2)|No|
+|pie_factura|char(2)|No|
+|pie_factura_info|varchar(200)|No|
+|subtotal_apro|char(2)|No|
+|iva_apro|char(2)|No|
+|nota_credito_apro|char(2)|No|
+|num_factura|char(2)|No|
+|empresa|char(2)|No|
+|opc|char(2)|No|
+== Volcado de datos para la tabla facturas_configurar
+
+|1|600|100| | | | | | | | | | | | | | | | | | | | | | | | | | |0
+|2|600|600|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|nota d e pie de factura|1|0|1|1|1|1
+== Estructura de tabla para la tabla facturas_datos
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|dato1|char(2)|No|
+|dato2|char(2)|No|
+|dato3|char(2)|No|
+|dato4|char(2)|No|
+|dato5|char(2)|No|
+|dato6|char(2)|No|
+|izq|char(2)|No|
+|cen|char(2)|No|
+|der|char(2)|No|
+|ref|char(2)|No|
+|opc|char(2)|No|
+== Volcado de datos para la tabla facturas_datos
+
+|1|1|1|1|1|1|1|1|0|0|1|1
+== Estructura de tabla para la tabla fecha
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|nombre|varchar(20)|No|
+|day|varchar(20)|No|
+|dato|varchar(20)|No|
+|fecha1|date|No|0000-00-00
+|fecha2|date|No|0000-00-00
+|d|varchar(20)|No|
+|d1|varchar(20)|No|
+|m|varchar(20)|No|
+|m1|varchar(20)|No|
+|a|varchar(20)|No|
+|a2|varchar(20)|No|
+== Volcado de datos para la tabla fecha
+
+|1| | | |2008-02-01|2008-02-05|1|5|2|2|2008|2008
+== Estructura de tabla para la tabla habitacion
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id_hab**//|smallint(6)|No|
+|habitacion|varchar(50)|Sí|NULL
+|tipo|varchar(50)|Sí|NULL
+|observaciones|varchar(50)|Sí|NULL
+|detalles|varchar(50)|Sí|NULL
+|precio|varchar(50)|Sí|NULL
+== Volcado de datos para la tabla habitacion
+
+|43|23|11| veintitres| |NULL
+|42|21|11| veintiuno| |NULL
+|41|16|10| dieciseis| |NULL
+|40|12|10| doce| |NULL
+|38|9|10| nueve| |NULL
+|39|10|10| diez| |NULL
+|37|8|10| ocho| |NULL
+|36|7|10| siete| |NULL
+|35|6|10| seis| |NULL
+|34|5|10| cinco| |NULL
+|33|3|10| tres| |NULL
+|32|2|10| dos| |NULL
+|44|25|11| veinticinco| |NULL
+|45|27|11| veintisiete| |NULL
+|46|29|11| veintinueve| |NULL
+|47|31|11| treinta y uno| |NULL
+|48|33|11| treinta y tres| |NULL
+|49|37|11| treinta y siete| |NULL
+|50|38|11| treinta y ocho| |NULL
+|51|40|11| cuarenta| |NULL
+|52|4|12| cuatro| |NULL
+|53|11|12| once| |NULL
+|54|13|12| trece| |NULL
+|55|18|12| dieciocho| |NULL
+|56|19|12| diecinueve| |NULL
+|57|14|14| catorce| |NULL
+|58|15|14| quince| |NULL
+|59|17|14| diecisiete| |NULL
+|60|20|14| veinte| |NULL
+|61|22|13| veintidos| |NULL
+|62|24|13| veinticuatro| |NULL
+|63|26|13| veintiseis| |NULL
+|64|28|13| veintiocho| |NULL
+|65|30|13| treinta| |NULL
+|66|32|13| treinta y dos| |NULL
+|67|39|13| treinta y nueve| |NULL
+|68|41|13| cuarenta y uno| |NULL
+|69|34|15| treinta y cuatro| |NULL
+|70|35|15| treinta y cinco| |NULL
+|71|36|15| treinta y seis| |NULL
+|72|99|16| Churuata| |NULL
+== Estructura de tabla para la tabla habitacion2
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|doc2|varchar(20)|No|
+|habitacion|text|Sí|NULL
+|tipo|text|Sí|NULL
+|nota|varchar(100)|No|
+|nota2|varchar(200)|No|
+|subtotal1|varchar(100)|No|
+|subtotal|varchar(100)|No|
+|iva|varchar(100)|No|
+|reten_iva|varchar(200)|No|
+|reten_isrl|varchar(200)|No|
+|obsev|text|No|
+|descripcion|varchar(150)|No|
+|status|text|No|
+|servicio|text|No|
+|personas|text|No|
+|fecha|text|No|
+|fecha3|date|No|0000-00-00
+|precio|varchar(200)|No|
+|cant_dia|varchar(200)|No|
+|fecha1|date|No|0000-00-00
+|fecha2|date|No|0000-00-00
+|opc|char(2)|No|0
+|opc2|varchar(2)|No|0
+|multi|varchar(100)|No|
+|numero|varchar(200)|No|
+|nombre|varchar(200)|No|
+|apellido|varchar(200)|No|
+|nom_hab|varchar(200)|No|
+|usuario|varchar(200)|No|
+== Volcado de datos para la tabla habitacion2
+
+|11|13812069|3|10|50|0|308.46|616.92 |55.5228 | | | | |ocupada| |2|2008-06-16|2008-06-16|154.23|2|2008-06-01|2008-06-06|1|1|3|2|victor manuel |escalona| tres|visita
+|12|17790733|21|11|50| |308.46| | | | | | |ocupada| |1|2008-06-16|0000-00-00|154.23|2|2008-06-16|2008-06-18|0|0|3| |victor manuel |escalona| veintiuno| 
+|10|13812069|2|10| |0|256.88|311.88 |28.0692 | | | | |ocupada| |2|2008-06-16|2008-06-16|128.44|2|2008-06-16|2008-06-18|1|1|2|1|juan carlos 2005|franco| dos|operador
+|13|13812069|5|10| |0|308.46|308.46 |27.7614 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|2|2008-06-16|2008-06-18|1|1|9|4|Manuel Fernandez|lopes perez| cinco|visita
+|14|13131313|4|12| |0|462.69|462.69 |41.6421 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|3|2008-06-16|2008-06-19|1|1|18|5|Manuel Fernandez|lopes perez| cuatro|operador
+|15|13812069|23|11| |0|462.69|462.69 |41.6421 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|3|2008-06-16|2008-06-19|1|1|36|6|juan carlos 2005|franco| veintitres|operador
+|16|13812069|8|10| |0|462.69|462.69 |41.6421 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|3|2008-06-16|2008-06-19|1|1|72|7|juan carlos 2005|franco| ocho|operador
+|17|13812069|15|14| |0|308.46|816.46 |73.4814 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|2|2008-06-16|2008-06-18|1|1|144|3|victor manuel |escalona| quince|visita
+|18|17790733|9|10| | |762| | | | | | |ocupada| |1|2008-06-16|0000-00-00|254|3|2008-06-16|2008-06-19|0|0|144| |victor manuel |escalona| nueve| 
+|19|13812069|99|16| |0|308.46|308.46 |27.7614 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|2|2008-06-16|2008-06-18|1|1|432|8|juan carlos 2005|franco| Churuata|visita
+|20|17790733|34|15| |0|462.69|462.69 |41.6421 | | | | |ocupada| |1|2008-06-16|2008-06-16|154.23|3|2008-06-16|2008-06-19|1|1|2592|9|victor manuel |escalona| treinta y cuatro| 
+|21|13131313|14|14| | |462.69| | | | | | |reservada| |1|2008-06-16|0000-00-00|154.23|3|2008-06-27|2008-06-30|0|1|1296| |Manuel Fernandez|lopes perez| catorce|operador
+|22|13812069|9|10|330.26| |330.26| | | | | | |ocupada| |1|2008-06-16|0000-00-00|165.13|2|2008-06-18|2008-06-20|0|1|r7| |juan carlos 2005|franco| nueve|online
+|23|13812069|10|10| |0|247.7|577.96 |52.0164 | | | | |ocupada| |1|2008-06-16|2008-06-16|123.85|2|2008-06-16|2008-06-18|1|1|4752|10|juan carlos 2005|franco| diez|operador
+|24|13812069|12|10| | |330.26| | | | | | |ocupada| |1|2008-06-16|0000-00-00|165.13|2|2008-06-16|2008-06-18|0|0|4752| |juan carlos 2005|franco| doce| 
+|27|13812069|99|16| | |308.46| | | | | | |ocupada| |1|2008-06-17|0000-00-00|154.23|2|2008-06-18|2008-06-20|0|1|14256| |juan carlos 2005|franco| Churuata|operador
+|28|13812069|99|16| | |462.69| | | | | | |ocupada| |1|2008-06-17|0000-00-00|154.23|3|2008-06-20|2008-06-23|0|0|14256| |juan carlos 2005|franco| Churuata| 
+|29|17790733|14|14| | |308.46| | | | | | |ocupada| |1|2008-06-17|0000-00-00|154.23|2|2008-06-17|2008-06-19|0|1|42768| |victor manuel |escalona| catorce|operador
+|30| |3|10| | | | | | | |cerraro| |bloqueada| | |2008-06-18|0000-00-00| |2|2008-07-01|2008-07-03|0|0| | | | | tres| 
+|31|13812069|15|14| | |462.69| | | | | | |reservada| |1|2008-06-18|0000-00-00|154.23|3|2008-06-27|2008-06-30|0|1|85536| |juan carlos 2005|franco| quince|operador
+|32| | | | | | | | | | | | | | | | |0000-00-00| |0|0000-00-00|0000-00-00|0|0| | | | | | 
+== Estructura de tabla para la tabla habitacion_reservas_web
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|doc2|varchar(20)|No|
+|tipo|varchar(50)|No|
+|subtotal1|varchar(100)|No|
+|subtotal|varchar(100)|No|
+|obsev|text|No|
+|status|text|No|
+|personas|text|No|
+|fecha|text|No|
+|precio|varchar(200)|No|
+|cant_dia|varchar(200)|No|
+|fecha1|date|No|0000-00-00
+|fecha2|date|No|0000-00-00
+|opc|char(2)|No|0
+|multi|varchar(100)|No|
+|num_web|varchar(200)|Sí|NULL
+|nombre|varchar(200)|No|
+|apellido|varchar(200)|No|
+|banco|varchar(2)|Sí|0
+|usuario|varchar(200)|No|
+|fecha_depo|varchar(50)|No|
+|banco_dep|varchar(50)|No|
+|monto_dep|varchar(50)|No|
+|numero_dep|varchar(50)|No|
+|anun|varchar(2)|No|0
+|email|varchar(50)|No|
+== Volcado de datos para la tabla habitacion_reservas_web
+
+|2|13812069|10|330.26| | |reservada|1|2008-06-16|165.13|2|2008-06-18|2008-06-20|1|r7|7|juan carlos 2005|franco|1|villaurbe|2008-06-16|Mercantil|330.26|0000000-1235-52236|0| 
+== Estructura de tabla para la tabla hab_tipo
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id_tipo**//|int(11)|No|
+|id_habitacion|text|Sí|NULL
+|tipo|text|Sí|NULL
+|precio|varchar(50)|No|
+== Volcado de datos para la tabla hab_tipo
+
+|13|4|doble PA| 
+|12|3|doble PB| 
+|11|2|matrimonial PA| 
+|10|1|matrimonial PB| 
+|14|5|triple PB| 
+|15|6|suite| 
+|16|7|churuata| 
+== Estructura de tabla para la tabla hab_tipo_web
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|tipo|text|Sí|NULL
+|tipo_tarifa|text|Sí|NULL
+|precio|varchar(50)|No|
+|nombre_tipo|varchar(50)|No|
+== Volcado de datos para la tabla hab_tipo_web
+
+|1|13|Normal Doble PB|123.85|doble PA
+|2|12|Corporativa Doble PB|105.50|doble PB
+|3|11|Normal Matrimonial PB|100|matrimonial PA
+|8|10|Normal Doble PA|165.13|matrimonial PB
+|5|14|Normal Triple PB|146.78|triple PB
+|6|15|Normal Suite |243.11|suite
+|7|16|Churuata (4 horas)|254|churuata
+== Estructura de tabla para la tabla hora
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|hora|time|No|
+|cod|char(2)|No|0
+== Volcado de datos para la tabla hora
+
+|2|13:00:00|0
+== Estructura de tabla para la tabla imagen
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|anchura|smallint(6)|No|0
+|altura|smallint(6)|No|0
+|tipo|varchar(15)|No|
+|ref|varchar(100)|No|
+|imagen|blob|No|
+== Volcado de datos para la tabla imagen
+
+|26|150|120|image/jpeg|1|
+|27|130|75|image/jpeg|1|
+|28|133|100|image/jpeg|1|
+|29|121|89|image/jpeg|1|
+|30|119|119|image/jpeg|2|
+|32|133|100|image/jpeg| |
+|33|133|100|image/jpeg| |
+|34|160|120|image/jpeg|1|
+|35|600|300|image/jpeg|1|
+|36|494|329|image/jpeg|21|
+|37|121|89|image/jpeg|32|
+|38|133|100|image/jpeg|32|
+|39|150|120|image/jpeg|32|
+== Estructura de tabla para la tabla imagen_botones
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|ruta|varchar(500)|No|
+|nombre|varchar(100)|No|
+|cedula|varchar(15)|No|
+== Volcado de datos para la tabla imagen_botones
+
+|1|imagenes/botones/botones.gif|Alberto|20000000
+|2|imagenes/botones/39356_118751044840664_100001173072614_102053_6019809_n.jpg|Pepito |10081
+|3|imagenes/botones/Jaime.gif|Jaime|4520018
+|4|imagenes/botones/4_Jaime.gif|Jaime|4520018
+|5|imagenes/botones/5_Jaime.png|Jaime|4520018
+|6|imagenes/botones/6_.png| | 
+|7|imagenes/botones/7_alfonso.png|alfonso|20200569
+|8|imagenes/botones/8_Alfonso.jpg|Alfonso|20200569
+== Estructura de tabla para la tabla informacion
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|nombre|text|Sí|NULL
+|telefono|text|Sí|NULL
+|correo|text|Sí|NULL
+|direccion|text|Sí|NULL
+|info|text|No|
+|rif|text|Sí|NULL
+|cod|char(2)|No|0
+|url|text|No|
+== Volcado de datos para la tabla informacion
+
+|1|GRAN HOTEL AMAZONAS|0248-5215633|hotelamazonas@enamazonas.com|Calle Evelio Roa. Puerto Ayacucho Edo. Amazonas                                                |Sistema Hotelero JRM Consultores v0.1.1|J-31380400-2|0|www.mihotel.com .ve
+== Estructura de tabla para la tabla iva
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|iva|varchar(10)|No|
+|cod|char(2)|No|0
+== Volcado de datos para la tabla iva
+
+|1|12|0
+== Estructura de tabla para la tabla logo
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|anchura|smallint(6)|No|0
+|altura|smallint(6)|No|0
+|tipo|varchar(15)|No|
+|ref|varchar(100)|No|
+|imagen|blob|No|
+== Volcado de datos para la tabla logo
+
+|26|161|161|149| |
+|27|756|756|92| |
+|28|603|603|96| |
+|29|856|856|92| |
+== Estructura de tabla para la tabla servicio
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id_serv**//|int(11)|No|
+|tipo|text|Sí|NULL
+|obser|text|Sí|NULL
+|precio|text|Sí|NULL
+|ref1|varchar(10)|No|
+== Volcado de datos para la tabla servicio
+
+|28|Corporativa Matrimonial PA| |154.23| 
+|25|Normal Matrimonial PB| |100| 
+|26|Corporativa Matrimonial PB| |110.09| 
+|33|Normal Doble PA| |165.13| 
+|32|Corporativa Triple PB| |128.44| 
+|31|Normal Triple PB| |146.78| 
+|30|Corporativa Doble PB| |105.50| 
+|29|Normal Doble PB| |123.85| 
+|27|Normal Matrimonial PA| |169.72| 
+|34|Corporativa Doble PA| |146.78| 
+|35|Normal Suite | |243.11| 
+|36|Corporativa Suite| |224.77| 
+|37|Churuata (4 horas)| |254| 
+== Estructura de tabla para la tabla servicios01
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|tipo|text|Sí|NULL
+|nombre|text|Sí|NULL
+|precio|text|Sí|NULL
+== Volcado de datos para la tabla servicios01
+
+|3|bebidas|Jugo de naranja|10
+|4|bebidas|Jugo de Melon|15
+|5|otros|Cigarrillos|12
+|7|Alimentos|comida Vegetariana|30
+|14|Churuata|Comida Tipica|10
+|15|Bebidas|bebidas energeticas|12
+|18|Refrigerios|jugos|5
+|17|Servicios|articulo de  consumo|45
+== Estructura de tabla para la tabla serv_asig
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|habitacion|text|Sí|NULL
+|id_serv|text|Sí|NULL
+|precio|text|Sí|NULL
+|tipo2|varchar(50)|Sí|NULL
+| id_serv1|varchar(50)|Sí|NULL
+== Volcado de datos para la tabla serv_asig
+
+|1|veintiuno|21|154.23|Corporativa Matrimonial PA|30
+|34| diez|10|123.85|Normal Doble PB|NULL
+|33| nueve|9|254|Churuata (4 horas)|NULL
+|32| veintiuno|21|100|Normal Matrimonial PB|NULL
+|26| veintitres|23|154.23|Corporativa Matrimonial PA| 
+|35| diez|10|123.85|Normal Doble PB|NULL
+|36| dos|2|128.44|Corporativa Triple PB|NULL
+|37| dos|2|165.13|Normal Doble PA|NULL
+|38| dos|2|105.50|Corporativa Doble PB|NULL
+|39| doce|12|165.13|Normal Doble PA|NULL
+|40| nueve|9|154.23|Corporativa Matrimonial PA|NULL
+|41| diez|10|154.23|Corporativa Matrimonial PA|NULL
+|42| ocho|8|154.23|Corporativa Matrimonial PA|NULL
+|43| seis|6|154.23|Corporativa Matrimonial PA|NULL
+|44| cinco|5|154.23|Corporativa Matrimonial PA|NULL
+|45| tres|3|154.23|Corporativa Matrimonial PA|NULL
+|46| dos|2|154.23|Corporativa Matrimonial PA|NULL
+|47| veinticinco|25|154.23|Corporativa Matrimonial PA|NULL
+|48| veintisiete|27|154.23|Corporativa Matrimonial PA|NULL
+|49| veintinueve|29|154.23|Corporativa Matrimonial PA|NULL
+|50| treinta y uno|31|154.23|Corporativa Matrimonial PA|NULL
+|51| treinta y tres|33|154.23|Corporativa Matrimonial PA|NULL
+|52| treinta y siete|37|154.23|Corporativa Matrimonial PA|NULL
+|53| treinta y ocho|38|154.23|Corporativa Matrimonial PA|NULL
+|54| treinta y seis|36|154.23|Corporativa Matrimonial PA|NULL
+|55| Churuata|99|154.23|Corporativa Matrimonial PA|NULL
+|56| cuatro|4|154.23|Corporativa Matrimonial PA|NULL
+|57| once|11|154.23|Corporativa Matrimonial PA|NULL
+|58| trece|13|154.23|Corporativa Matrimonial PA|NULL
+|59| dieciocho|18|154.23|Corporativa Matrimonial PA|NULL
+|60| diecinueve|19|154.23|Corporativa Matrimonial PA|NULL
+|61| catorce|14|154.23|Corporativa Matrimonial PA|NULL
+|62| quince|15|154.23|Corporativa Matrimonial PA|NULL
+|63| veinte|20|154.23|Corporativa Matrimonial PA|NULL
+|64| treinta y cuatro|34|154.23|Corporativa Matrimonial PA|NULL
+|65| treinta y cinco|35|154.23|Corporativa Matrimonial PA|NULL
+|66| treinta y seis|36|154.23|Corporativa Matrimonial PA|NULL
+|67| siete|7|100|Normal Matrimonial PB|NULL
+|68| dieciseis|16|165.13|Normal Doble PA|NULL
+== Estructura de tabla para la tabla status_hab
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id**//|int(11)|No|
+|status|text|Sí|NULL
+== Volcado de datos para la tabla status_hab
+
+|1|reservada
+|2|ocupada
+|3|inicio
+|4|finalizada
+|5|bloqueada
+|6|libre
+== Estructura de tabla para la tabla tipo_consumo
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**id_tipo**//|int(11)|No|
+|tipo|text|Sí|NULL
+== Volcado de datos para la tabla tipo_consumo
+
+|1|Bebidas
+|2|Alimentos
+|3|Refrigerios
+|4|Otros
+|7|Churuata
+|8|Servicios
+== Estructura de tabla para la tabla usuarios
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**ID**//|smallint(6)|No|
+|usuario|tinytext|No|
+|nombre|varchar(50)|Sí|NULL
+|apellido|varchar(50)|Sí|NULL
+|pass|tinytext|No|
+|pass2|varchar(50)|Sí|NULL
+|email|varchar(50)|Sí|NULL
+|nivel_acceso|char(2)|No|
+|ag_cli|char(2)|No|0
+|bus_cli|char(2)|No|0
+|eli_cli|char(2)|No|0
+|mod_cli|char(2)|No|0
+|asi_hab|char(2)|No|0
+|eli_hab|char(2)|No|0
+|asi_con|char(2)|No|0
+|con_rea|char(2)|No|0
+|ver_cal|char(2)|No|0
+|adm_1|char(2)|No|0
+|adm_2|char(2)|No|0
+|adm_3|char(2)|No|0
+|adm_4|char(2)|No|0
+|adm_5|char(2)|No|0
+|adm_6|char(2)|No|0
+|fact|char(2)|No|0
+== Volcado de datos para la tabla usuarios
+
+|2|admin|admin|admin|bf4d73f316737b26f1e860da0ea63ec8|8758|correo@correol.com|1|1|1|1|1|1|1|1|1|1|1|0|0|1|1|1|1
+|6|operador|operador|operador|25f9e794323b453885f5181f1b624d0b|123456789|correo@correol.com|1|1|1|1|1|1|1|1|0|1|1|1|1|0|0|0|1
+|5|visita|visita|visita|e10adc3949ba59abbe56e057f20f883e|123456|correo@correol.com|0|1|1|1|1|1|1|1|0|1|0|0|0|0|0|0|1
+|8|brismar|Brismar|Mart?nez|c94f165426a2aa17ab216a961e2cf6bd|17427500|04269312218|0|1|1|1|1|1|1|1|0|1|0|0|0|0|0|0|1
+|9|chang|Kian Lec|Chang|fe2d6757cca153fdd1798c5d0a6ac270|18243613|0426904542|0|1|1|1|1|1|1|1|0|1|0|0|0|0|0|0|1
+|10|frank|Frank|P?rez|a8feb8d39b6f179d06493ee18b79770e|16767365|04144786051|0|1|1|1|1|1|1|1|0|1|0|0|0|0|0|0|1
+|11|julio|Julio|Laya|400538ea46d243ca889f9e6934dcf155|15304707|04165214647|0|1|1|1|1|1|1|1|0|1|0|0|0|0|0|0|1
+|12|ramon|Ram?n|Camico|fecdc14d4aa0e4d1631012a18aaf9834|13964977|04141826242|0|1|1|1|1|1|1|1|0|1|0|0|0|0|0|0|1
+|13|alfonso|Alfonso|Mora|e10adc3949ba59abbe56e057f20f883e|123456|alf_m91@hotmail.com| | | | | | | | | | | | | | | | | 
+== Estructura de tabla para la tabla usuarios2
+
+|------
+|Columna|Tipo|Nulo|Predeterminado
+|------
+|//**ID**//|smallint(6)|No|
+|usuario|tinytext|No|
+|nombre|varchar(50)|Sí|NULL
+|apellido|varchar(50)|Sí|NULL
+|pass|tinytext|No|
+|pass2|varchar(50)|Sí|NULL
+|email|varchar(50)|Sí|NULL
+|nivel_acceso|char(2)|No|
+|opc|varchar(2)|No|0
+|doc2|varchar(50)|No|
+== Volcado de datos para la tabla usuarios2
+
+|2|villaurbe|juan|franco|e10adc3949ba59abbe56e057f20f883e|123456|villadasda2aq2312q@cas.com|0|1|13812069
+|3|villaurbe2|juan|franco|e10adc3949ba59abbe56e057f20f883e|123456|villadasda2aq2312q@cas.com|0|1|13812067
+|6|pedro|pedro|pedro|c6cc8094c2dc07b700ffcc36d64e2138|pedro|nn|0|1|13812068
+|24|manuel|manuel|lopez|202cb962ac59075b964b07152d234b70|123|asdasd| |1|177907552
